@@ -1,0 +1,48 @@
+fcbot:
+  version: 1 # This is optional but must be set to 1 if provided
+  log_level: "ERROR" # This accepts Python logging level strings (DEBUG, INFO, WARNING, ERROR, and CRITICAL)
+  output_dir: "cad"
+
+outputs:
+  - name: STEP Output - metal # The `name` key is optional and is used in all log messages to identify the step
+    type: step # Currently `step`, `stl`, `screenshot`, and `pdf` are supported output formats
+    filename: metal.step # The output file name
+    objects: # Specify which FreeCAD objects to include in the output
+      - metal # This can be a list of object labels, as in this example
+  - name: STL Output - metal
+    comment: Output a STL Mesh # Comments can be provided and are output to the console before the step is run
+    type: stl
+    filename: metal.stl
+    objects:
+      - metal
+
+  - name: STEP Output - plastic # The `name` key is optional and is used in all log messages to identify the step
+    type: step # Currently `step`, `stl`, `screenshot`, and `pdf` are supported output formats
+    filename: plastic.step # The output file name
+    objects: # Specify which FreeCAD objects to include in the output
+      - plastic # This can be a list of object labels, as in this example
+  - name: STL Output - plastic
+    comment: Output a STL Mesh # Comments can be provided and are output to the console before the step is run
+    type: stl
+    filename: plastic.stl
+    objects:
+      - plastic
+
+  - name: STEP Output - cover # The `name` key is optional and is used in all log messages to identify the step
+    type: step # Currently `step`, `stl`, `screenshot`, and `pdf` are supported output formats
+    filename: cover_with_lcd.step # The output file name
+    objects: # Specify which FreeCAD objects to include in the output
+      - with_lcd # This can be a list of object labels, as in this example
+  - name: STL Output - cover
+    comment: Output a STL Mesh # Comments can be provided and are output to the console before the step is run
+    type: stl
+    filename: cover_with_lcd.stl
+    objects:
+      - with_lcd
+#  - name: PDF Drawing
+#    type: pdf
+#    filename: part.pdf
+#    objects:
+#      pages:
+#        all # Similar to `shapes: all`, `pages: all` will export all TechDraw Pages into a single
+#        # merged PDF file.
