@@ -1,0 +1,54 @@
+name: Release
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # export data 
+      - name: run KiBot
+        uses: INTI-CMNB/KiBot@v2_k9
+        with:
+          config: pcb/config.kibot.yaml
+          dir: pcb/
+          schema: pcb/esp32stepper.kicad_sch
+          board: pcb/esp32stepper.kicad_pcb
+      - name: run FCBot
+        uses: asymworks/fcbot@v0
+        with:
+          dir: cad
+          config: cad/config.fcbot.yaml
+          project: cad/esp32stepper.FCStd
+
+      # generate changelog
+      - name: Conventional Changelog Action
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.github_token }}
+          tag-prefix: 'v'
+          output-file: 'CHANGELOG.md'
+                    
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+#          commit_message: Automated Change
+          file_pattern:
+              'pcb/docs/bom/* pcb/docs/*.pdf pcb/docs/*.svg pcb/docs/img/*.svg cad/*.stl cad/*.step'
+
+      # upload artifact
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: esp32stepper
+          path: .
