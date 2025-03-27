@@ -21,7 +21,7 @@ jobs:
       - name: run KiBot
         uses: INTI-CMNB/KiBot@v2_k9
         with:
-          config: pcb/config.kibot.yaml
+          config: .kibot.yaml
           dir: pcb/
           schema: pcb/esp32stepper.kicad_sch
           board: pcb/esp32stepper.kicad_pcb
@@ -29,7 +29,7 @@ jobs:
         uses: asymworks/fcbot@v0
         with:
           dir: cad
-          config: cad/config.fcbot.yaml
+          config: .fcbot.yaml
           project: cad/esp32stepper.FCStd
 
       # generate changelog
