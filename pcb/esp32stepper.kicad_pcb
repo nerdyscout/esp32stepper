@@ -12,7 +12,7 @@
 		(date "2025-03-16")
 		(rev "1.0")
 		(company "Stefan Herold")
-		(comment 1 "License: https://ohwr.org/cern_ohl_s_v2.txt (CERN-OHL-S)")
+		(comment 1 "License: https://ohwr.org/cern_ohl_s_v2.txt (CERN-OHL-P)")
 		(comment 2 "Project: https://github.com/nerdyscout/esp32stepper")
 	)
 	(layers

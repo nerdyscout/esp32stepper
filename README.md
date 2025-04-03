@@ -21,7 +21,7 @@ Stepper motor controller using silent Trinamic TMC2209, ESP32-S3 and USB-PD moun
 - **JTAG** pins accessible
 - **3 GPIO** pins and **UART** available
 
-## PCB
+## PCB - License CERN-OHL-P-2.0
 
 ### Schematic
 

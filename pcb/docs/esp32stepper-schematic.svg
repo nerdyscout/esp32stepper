@@ -4455,8 +4455,8 @@ stroke:#840000; stroke-width:0.1524; stroke-opacity:1;
 stroke-linecap:round; stroke-linejoin:round;">
 <text x="300.9890" y="264.7522"
 textLength="68.7996" font-size="2.0000" lengthAdjust="spacingAndGlyphs"
-text-anchor="start" opacity="0" stroke-opacity="0">License: https://ohwr.org/cern_ohl_s_v2.txt (CERN-OHL-S)</text>
-<g class="stroked-text"><desc>License: https://ohwr.org/cern_ohl_s_v2.txt (CERN-OHL-S)</desc>
+text-anchor="start" opacity="0" stroke-opacity="0">License: https://ohwr.org/cern_ohl_s_v2.txt (CERN-OHL-P)</text>
+<g class="stroked-text"><desc>License: https://ohwr.org/cern_ohl_s_v2.txt (CERN-OHL-P)</desc>
 <path d="M302.1606 264.6881
 L301.4463 264.6881
 " />
