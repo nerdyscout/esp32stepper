@@ -34,6 +34,13 @@ jobs:
           config: fcbot.yaml
           project: cad/esp32stepper.FCStd
 
+      # commit output files
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+        # commit_message: Automated Change
+          file_pattern:
+              'docs/bom/* docs/*.pdf docs/*.svg docs/img/*.svg cad/*.stl cad/*.step'
+
       # generate changelog
       - name: Conventional Changelog Action
         uses: TriPSs/conventional-changelog-action@v5
@@ -41,13 +48,7 @@ jobs:
           github-token: ${{ secrets.github_token }}
           tag-prefix: 'v'
           output-file: 'CHANGELOG.md'
-                    
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-        # commit_message: Automated Change
-          file_pattern:
-              'docs/bom/* docs/*.pdf docs/*.svg docs/img/*.svg cad/*.stl cad/*.step'
-
+          
       # upload artifact
       - name: upload artifact
         uses: actions/upload-artifact@v4
