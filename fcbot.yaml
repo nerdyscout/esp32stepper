@@ -39,10 +39,18 @@ outputs:
     filename: cover_with_lcd.stl
     objects:
       - with_lcd
-#  - name: PDF Drawing
-#    type: pdf
-#    filename: part.pdf
-#    objects:
-#      pages:
-#        all # Similar to `shapes: all`, `pages: all` will export all TechDraw Pages into a single
-#        # merged PDF file.
+
+  - name: FC Render
+    comment: Output a FreeCAD Screenshot
+    type: screenshot # Type `screenshot` outputs use the built-in `screenshot` functionality of FreeCAD
+    filename: img/render.png # Any file extension supported by FreeCAD can be specified here
+    objects:
+      - case
+      - mount
+      - esp32stepper
+      - NEMA17
+    options:
+      resolution: [1024, 768] # Specify the X and Y resolution for the export
+      camera: orthographic # Camera mode can be `orthographic` or `perspective`
+      view: isometric # Multiple view modes are possible, including a custom camera position (see below)
+      background: transparent # Other color names can be passed here

@@ -1,10 +1,10 @@
 site: https://nerdyscout.github.io/esp23stepper/
-summary: Stepper motor controller using TMC2209, ESP32-S3 and USB-PD mountable onto any NEMA17 motor.
+summary: Stepper motor controller using TMC2208, ESP32-S3 and USB-PD mountable onto any NEMA17 motor.
 readme: README.md
-bom: pcb/gerbers/esp23stepper.csv
+bom: docs/bom/esp32stepper-octopart.csv
 eda:
   type: kicad
   pcb: pcb/esp32stepper.kicad_pcb
 gerbers: pcb/gerbers
-color: green
+color: black
 ibom-enabled: true

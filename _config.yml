@@ -20,7 +20,7 @@
 
 title: ESP32STEPPER
 email: stefan.herold@posteo.de
-description: "Stepper motor controller using TMC2209, ESP32-S3 and USB-PD mountable onto any NEMA17 motor."
+description: "Stepper motor controller using TMC2208, ESP32-S3 and USB-PD mountable onto any NEMA17 motor."
 baseurl: "esp32stepper" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: nerdyscout

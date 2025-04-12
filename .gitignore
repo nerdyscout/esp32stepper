@@ -15,7 +15,7 @@ _autosave-*
 *.tmp
 *-save.pro
 *-save.kicad_pcb
-fp-info-cache
+pcb/fp-info-cache
 ~*.lck
 \#auto_saved_files#
 
@@ -41,3 +41,5 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+firmware/esphome/.esphome/*

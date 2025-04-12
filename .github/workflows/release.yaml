@@ -9,10 +9,12 @@ on:
     branches:
       - main
       - develop
-      
+            
 jobs:
   release:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/inti-cmnb/kicad9_auto_full:latest
     permissions:
       contents: write
     steps:
@@ -39,7 +41,7 @@ jobs:
         with:
         # commit_message: Automated Change
           file_pattern:
-              'docs/bom/* docs/*.pdf docs/*.svg docs/img/*.svg cad/*.stl cad/*.step'
+              'pcb/docs/bom/*.* pcb/docs/*.*  pcb/docs/img/*.svg cad/*.stl cad/*.step cad/img/*.png'
 
       # generate changelog
       - name: Conventional Changelog Action
@@ -50,6 +52,7 @@ jobs:
           output-file: 'CHANGELOG.md'
           
       # upload artifact
+      - run: rm pcb/fp-info-cache
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
