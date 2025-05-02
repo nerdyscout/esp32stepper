@@ -47,7 +47,7 @@ outputs:
     objects:
       - case
       - mount
-      - pcb
+      - esp32stepper
       - NEMA17
     options:
       resolution: [1024, 768] # Specify the X and Y resolution for the export

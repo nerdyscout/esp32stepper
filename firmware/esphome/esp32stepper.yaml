@@ -4,15 +4,15 @@
 external_components:
   - source: github://slimcdk/esphome-custom-components
     components: [tmc2209_hub, tmc2209, stepper]
-  - source:
-      type: local
-      path: components/sensor/AS5048B
+#  - source:
+#      type: local
+#      path: components
 
 esphome:
   name: esp32stepper
   project:
     name: nerdyscout.esp32stepper
-    version: "1.0"
+    version: "1.1"
   platformio_options:
     board_build.flash_mode: dio
     upload_speed: 921600
@@ -81,40 +81,48 @@ logger:
 #  level: DEBUG
 
 i2c:
-  sda: GPIO45
-  scl: GPIO38
+  sda: GPIO46
+  scl: GPIO45
   scan: true
 #  id: bus_a
 
 uart:
-  tx_pin: GPIO43
-  rx_pin: GPIO44
-  baud_rate: 115200
-#  id: serial
+  - id: serial_extern
+    tx_pin: GPIO43
+    rx_pin: GPIO44
+    baud_rate: 115200
+  - id: serial_stepper
+    tx_pin: GPIO17
+    rx_pin: GPIO18
+    baud_rate: 115200
+
+tmc2209_hub:
+  id: tmc_hub
+  uart_id: serial_stepper
 
 output:
   - platform: gpio
-    pin: GPIO14
+    pin: GPIO21
     id: MS1_pin
   - platform: gpio
     pin: GPIO13
     id: MS2_pin
 
   - platform: gpio
-    pin: GPIO48
+    pin: GPIO14
     id: CFG1_pin
   - platform: gpio
-    pin: GPIO07
+    pin: GPIO12
     id: CFG2_pin
   - platform: gpio
-    pin: GPIO47
+    pin: GPIO11
     id: CFG3_pin
 
 light:
   - platform: neopixelbus
     type: GRB
     variant: WS2812
-    pin: GPIO46
+    pin: GPIO10
     num_leds: 2
     id: led_rgb
   - platform: partition
@@ -133,16 +141,17 @@ light:
 stepper:
   - platform: tmc2209
     id: driver
+    tmc2209_hub_id: tmc_hub
     max_speed: 800 steps/s
     acceleration: 1500 steps/s^2
     deceleration: 1500 steps/s^2
     rsense: 100 mOhm
     vsense: False
     enn_pin: GPIO09 # Enable not input pin for the driver.
-    diag_pin: GPIO12 # Error signaling from the driver.
-    index_pin: GPIO11 # Serves as stepping feedback from the internal step pulse generator
-    #    step_pin: GPIO10 # Provides stepping pulses to the driver.
-    #    dir_pin: GPIO08 # Controls direction of the motor.
+    diag_pin: GPIO08 # Error signaling from the driver.
+    index_pin: GPIO07 # Serves as stepping feedback from the internal step pulse generator
+    step_pin: GPIO02 # Provides stepping pulses to the driver.
+    dir_pin: GPIO04 # Controls direction of the motor.
     on_status:
       - logger.log:
           format: "Driver is reporting an update! (code %d)"
@@ -171,7 +180,7 @@ binary_sensor:
   - platform: gpio
     name: Button 1
     pin:
-      number: GPIO17
+      number: GPIO47
       mode: INPUT
       inverted: true
     id: btn1
@@ -182,7 +191,7 @@ binary_sensor:
     name: Button 2
     id: btn2
     pin:
-      number: GPIO21
+      number: GPIO48
       mode: INPUT
       inverted: true
     filters:
@@ -228,9 +237,9 @@ sensor:
 
   - platform: rotary_encoder
     name: "Rotary Encoder"
-    pin_a: GPIO01
-    pin_b: GPIO03
-    pin_reset: GPIO02
+    pin_a: GPIO15
+    pin_b: GPIO16
+    pin_reset: GPIO03
     id: rotary
 #    on_value:
 #      then:
