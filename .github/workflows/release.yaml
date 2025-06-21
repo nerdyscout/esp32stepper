@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/inti-cmnb/kicad9_auto_full:latest
-#    permissions:
-#      contents: write
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
