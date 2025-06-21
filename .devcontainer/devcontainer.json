@@ -1,0 +1,21 @@
+{
+    "name": "devContainer",
+    "image": "ghcr.io/inti-cmnb/kicad9_auto_full:latest",
+    "runArgs": [
+        "-v",
+        "/var/run/docker.sock:/var/run/docker.sock"
+    ],
+    "postCreateCommand": "curl -sL https://raw.githubusercontent.com/nektos/act/master/install.sh | bash -s -- -b /usr/local/bin",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "danielmeza.kicad-syntax-highlighter",
+                "ESPHome.esphome-vscode",
+                "argmaster.gerber-x3-x2-format-support",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "github.vscode-github-actions"
+            ]
+        }
+    }
+}
