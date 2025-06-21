@@ -10272,7 +10272,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 106.68) (xy 182.88 106.68)
+			(xy 165.1 106.68) (xy 170.18 106.68)
 		)
 		(stroke
 			(width 0)
@@ -10402,7 +10402,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 116.84) (xy 182.88 116.84)
+			(xy 165.1 116.84) (xy 184.15 116.84)
 		)
 		(stroke
 			(width 0)
@@ -13202,7 +13202,7 @@
 	)
 	(wire
 		(pts
-			(xy 170.18 127) (xy 165.1 127)
+			(xy 184.15 127) (xy 165.1 127)
 		)
 		(stroke
 			(width 0)
@@ -14141,7 +14141,7 @@
 		(uuid "032f5c8d-4a51-436d-957a-8ed86b089969")
 	)
 	(label "MS2"
-		(at 182.88 106.68 180)
+		(at 184.15 116.84 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14291,7 +14291,7 @@
 		(uuid "e79d7bc6-2747-447a-8109-7f98bf1d9b2e")
 	)
 	(label "MS1"
-		(at 182.88 116.84 180)
+		(at 184.15 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -14682,7 +14682,7 @@
 	)
 	(global_label "BTN2"
 		(shape input)
-		(at 170.18 129.54 0)
+		(at 170.18 78.74 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14692,7 +14692,7 @@
 		)
 		(uuid "44b54d42-8f8a-4ef9-81d7-054ec038c290")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 177.9428 129.54 0)
+			(at 177.9428 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14836,7 +14836,7 @@
 	)
 	(global_label "BTN1"
 		(shape input)
-		(at 170.18 127 0)
+		(at 170.18 96.52 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14846,7 +14846,7 @@
 		)
 		(uuid "569a67d1-4f5c-4d96-bf7d-d098ce3294ac")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 177.9428 127 0)
+			(at 177.9428 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14880,7 +14880,7 @@
 	)
 	(global_label "{slash}TMC_EN"
 		(shape input)
-		(at 170.18 96.52 0)
+		(at 170.18 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14890,7 +14890,7 @@
 		)
 		(uuid "6364a7b5-8ee3-4396-8956-590c8c2192da")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.6318 96.52 0)
+			(at 181.6318 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14946,7 +14946,7 @@
 	)
 	(global_label "DIR"
 		(shape input)
-		(at 170.18 83.82 0)
+		(at 170.18 106.68 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14956,7 +14956,7 @@
 		)
 		(uuid "70667ebb-7d17-48b3-b96a-428d62634573")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 176.31 83.82 0)
+			(at 176.31 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15144,7 +15144,7 @@
 	)
 	(global_label "CFG1"
 		(shape input)
-		(at 170.18 109.22 0)
+		(at 170.18 83.82 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15154,7 +15154,7 @@
 		)
 		(uuid "a4d5dc55-b1e6-4280-91a0-1e9af9199907")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 178.0033 109.22 0)
+			(at 178.0033 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15562,7 +15562,7 @@
 	)
 	(global_label "STEP"
 		(shape input)
-		(at 170.18 78.74 0)
+		(at 170.18 109.22 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15572,7 +15572,7 @@
 		)
 		(uuid "e3e643d8-2786-4e99-b60f-725d196c879c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 177.7613 78.74 0)
+			(at 177.7613 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
