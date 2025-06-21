@@ -1,5 +1,3 @@
-# This example uses a custom TMC2209 component to control the PD Stepper
-# Motor can be moved using a slider within ESPHome
 
 external_components:
   - source: github://slimcdk/esphome-custom-components
