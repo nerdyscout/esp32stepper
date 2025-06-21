@@ -10,7 +10,7 @@
 	(title_block
 		(title "ESP32STEPPER")
 		(date "2025-05-02")
-		(rev "1.1")
+		(rev "1.2")
 		(company "Stefan Herold")
 		(comment 1 "License: https://ohwr.org/cern_ohl_w_v2.txt (CERN-OHL-W)")
 		(comment 2 "Project: https://github.com/nerdyscout/esp32stepper")
@@ -23796,10 +23796,9 @@
 			)
 		)
 		(property "Value" "MS2"
-			(at 0 2 90)
+			(at 0 1.9 270)
 			(unlocked yes)
-			(layer "F.SilkS")
-			(hide yes)
+			(layer "B.SilkS")
 			(uuid "4dd3ca05-2cdd-4a9e-b752-6807bb58077b")
 			(effects
 				(font
@@ -24893,10 +24892,9 @@
 			)
 		)
 		(property "Value" "PWM"
-			(at -0.65 1.95 270)
+			(at 0 1.9 270)
 			(unlocked yes)
-			(layer "F.SilkS")
-			(hide yes)
+			(layer "B.SilkS")
 			(uuid "fa5d0bdd-458b-4b27-bc4b-1223e0d738b4")
 			(effects
 				(font
@@ -25222,10 +25220,9 @@
 			)
 		)
 		(property "Value" "MS1"
-			(at 0 1.9 270)
+			(at 0 -1.9 270)
 			(unlocked yes)
-			(layer "F.SilkS")
-			(hide yes)
+			(layer "B.SilkS")
 			(uuid "af3ba9ab-7121-431c-b5b1-bd1d971fbc7d")
 			(effects
 				(font
@@ -26839,6 +26836,19 @@
 			(justify left bottom mirror)
 		)
 	)
+	(gr_text "max 24V!"
+		(at 74.8 121.2 0)
+		(layer "B.SilkS")
+		(uuid "7b3371a5-48b9-4e1a-bf2c-edf16a5595fb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify mirror)
+		)
+	)
 	(gr_text "GND"
 		(at 106.9 134.2 0)
 		(layer "B.SilkS")
@@ -26852,7 +26862,7 @@
 		)
 	)
 	(gr_text "${TITLE}"
-		(at 80.5 126.7 90)
+		(at 82 126.65 90)
 		(layer "B.SilkS")
 		(uuid "975b2d2c-7d42-48e9-8f0b-20afc7c1506e")
 		(effects
@@ -26902,7 +26912,7 @@
 		)
 	)
 	(gr_text "v${REVISION}/${CURRENT_DATE}"
-		(at 82.1 126.6 90)
+		(at 84 126.55 90)
 		(layer "B.SilkS")
 		(uuid "df4b9b0f-dcb2-486b-ac73-a72ce921a40c")
 		(effects
